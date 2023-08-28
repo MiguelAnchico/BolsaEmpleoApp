@@ -14,7 +14,7 @@ const UpdateCiudadanoPage = () => {
 
   const comprobando = (ciudadano) => {
     console.log(ciudadano);
-    updateCiudadano(id, ciudadano);
+    updateCiudadano({ id, ciudadano });
   };
 
   return (
@@ -22,7 +22,11 @@ const UpdateCiudadanoPage = () => {
       {isLoading && <p>Cargando...</p>}
       {isError && <p>Error al cargar los datos.</p>}
       {data && Object.entries(data?.data).length != 0 && (
-        <CiudadanoForm initialData={data?.data} onSubmit={comprobando} />
+        <CiudadanoForm
+          action="Actualizar"
+          initialData={data?.data}
+          onSubmit={comprobando}
+        />
       )}
     </div>
   );

@@ -32,7 +32,7 @@ const CreateCiudadanoPage = () => {
     <div className="create-ciudadano-page">
       <Toast ref={toast} />
       <h1>Crear Ciudadano</h1>
-      <CiudadanoForm onSubmit={onSubmit} />
+      <CiudadanoForm action="Crear" onSubmit={onSubmit} />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { Button } from "primereact/button";
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const CiudadanoForm = ({ onSubmit, initialData }) => {
+const CiudadanoForm = ({ onSubmit, initialData, action }) => {
   const [aspiracionSalarial, setAspiracionSalarial] = useState(
     initialData?.aspiracionSalarial
   );
@@ -118,7 +118,7 @@ const CiudadanoForm = ({ onSubmit, initialData }) => {
         value={correoElectronico}
         onChange={(e) => setCorreoElectronico(e.target.value)}
       />
-      <Button type="submit" label="Crear Ciudadano" />
+      <Button type="submit" label={`${action} Ciudadano`} />
     </form>
   );
 };
@@ -135,6 +135,7 @@ CiudadanoForm.propTypes = {
     profesion: PropTypes.string,
     correoElectronico: PropTypes.string,
   }),
+  action: PropTypes.string.isRequired,
 };
 
 CiudadanoForm.defaultProps = {

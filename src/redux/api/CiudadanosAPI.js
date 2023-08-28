@@ -43,7 +43,7 @@ export const ciudadanosApi = createApi({
      * @param payload - Un objeto que contiene el ID del ciudadano a actualizar y los datos actualizados del ciudadano.
      */
     updateCiudadano: builder.mutation({
-      query: (id, ciudadano) => ({
+      query: ({ id, ciudadano }) => ({
         url: `Ciudadano/${id}`,
         method: "PUT",
         headers: { "Content-Type": "application/json" },
