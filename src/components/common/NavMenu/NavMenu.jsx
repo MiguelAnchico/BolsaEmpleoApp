@@ -9,13 +9,13 @@ const NavMenu = () => {
 
   useEffect(() => {
     const url = location.pathname;
-    if (url === "/ciudadanos") return setActiveIndex(0);
+    if (url === "/") return setActiveIndex(0);
     if (url === "/ciudadano/crear") return setActiveIndex(1);
     if (url === "/vacantes") return setActiveIndex(2);
   }, []);
 
   const items = [
-    { label: "Lista de Ciudadanos", url: "/ciudadanos" },
+    { label: "Lista de Ciudadanos", url: "/" },
     { label: "Agregar Ciudadano", url: "/ciudadano/crear" },
     { label: "Vacantes", url: "/vacantes" },
   ];

@@ -23,7 +23,16 @@ const CiudadanosList = () => {
     return <p>Error al cargar los datos.</p>;
   }
 
-  const ciudadanos = data?.data || [];
+  const ciudadanos =
+    data?.data.map((ciudadano) => ({
+      ...ciudadano,
+      fechaNacimiento: new Date(ciudadano.fechaNacimiento).toLocaleDateString(
+        "es-BO",
+        {
+          timeZone: "UTC",
+        }
+      ),
+    })) || [];
 
   return (
     <>

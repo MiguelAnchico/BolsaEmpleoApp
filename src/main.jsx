@@ -12,16 +12,17 @@ import CreateCiudadanoPage from "./pages/CreateCiudadanoPage/CreateCiudadanoPage
 import { Provider } from "react-redux";
 import { store } from "./redux/store/ConfigureStore";
 import UpdateCiudadanoPage from "./pages/UpdateCiudadanoPage/UpdateCiudadanoPage";
+import { VacantesPage } from "./pages/VacantesPage/VacantesPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <Router>
       <NavMenu />
       <Routes>
-        <Route path="/ciudadanos" Component={CiudadanosList} />
+        <Route path="/" Component={CiudadanosList} />
         <Route path="/ciudadano/crear" Component={CreateCiudadanoPage} />
         <Route path="/update/:id" Component={UpdateCiudadanoPage} />
-        {/*<Route path="/vacantes" component={Vacantes} />*/}
+        <Route path="/vacantes" Component={VacantesPage} />
       </Routes>
     </Router>
   </Provider>
